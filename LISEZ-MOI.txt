@@ -1,35 +1,54 @@
-IMEN BIJOUX - VERSION COMPLETE DE DEMARRAGE
+IMEN BIJOUX — VERSION 2 (mise à jour de l’application existante)
 
-Fichiers à publier à la racine d'un hébergement HTTPS :
+FICHIERS À PUBLIER À LA RACINE DU DÉPÔT
 - index.html
-- manifest.webmanifest
+- manifest.json (manifeste PWA compatible Chrome/GitHub Pages)
 - sw.js
+- icon-192.png et icon-512.png (à la racine du dépôt)
+- LISEZ-MOI.txt (guide)
 
-Modules :
-- Catalogue et références automatiques par catégorie
-- Photos des produits (compressées côté navigateur)
-- Fournisseurs
-- Achats par lots datés, prix et quantités, coût moyen pondéré
-- Stock par emplacement (maison / Shaïma)
-- Transferts sans comptabilisation en vente
-- Ventes Imen à distance / Shaïma au comptoir
-- Livraison et frais facturés au client séparés du chiffre d'affaires bijoux
-- Suivi colis Novax, règlements saisis manuellement
-- Retours, échanges, colis non livrés, responsabilité et frais
-- Fiches clients avec statuts normal / à surveiller / bloqué (décision manuelle)
-- Promotions
-- Dépenses
-- Rapports indicatifs et marge brute
-- Export / restauration JSON
+NOUVEAUTÉS DE CETTE VERSION
+- Interface noir, beige et or, avec navigation verticale à gauche.
+- Catégories supplémentaires : montres, accessoires cheveux, couronnes/diadèmes, serre-têtes, bracelets de cheville et bracelets en fil.
+- Fiche produit enrichie : public Femme/Homme/Mixte, marque ou modèle de référence (dont Xiaomi et Messika), collection/gamme, matière/qualité (inox, XP, XD, plaqué or), finition, couleur, taille, type de bague, système de bracelet, fonctionnement de montre et composition descriptive des parures.
+- Gestion des bracelets extensibles avec extension amovible ou non extensibles. Créer une fiche distincte pour chaque version ayant un prix ou un coût différent.
+- Nouvelle rubrique « Défaillances, remboursements et pertes » : déclaration des articles défectueux, quantité, fournisseur, coût d’achat, emplacement, statut du retour, remboursement, remplacement accepté ou perte définitive. Les articles déclarés défectueux sont retirés du stock disponible.
+- Possibilité de mettre à jour le statut d’un dossier fournisseur après la déclaration initiale.
+- Sauvegarde et restauration compatibles avec les sauvegardes de la version précédente.
 
-IMPORTANT - À LIRE AVANT UTILISATION
-1. Les données sont conservées dans le navigateur de l'appareil (localStorage). Elles ne sont pas synchronisées ni sauvegardées automatiquement dans le cloud.
-2. Exporter régulièrement une sauvegarde JSON et la conserver ailleurs (Drive, ordinateur, etc.).
-3. GitHub Pages sert le code statique. Le dépôt public rend le code visible. N'y placez aucune donnée commerciale ou personnelle. Les données saisies dans l'app ne sont pas envoyées au dépôt.
-4. La version actuelle est une base fonctionnelle de gestion, non auditée et non certifiée comptablement. Tester avec des données fictives et vérifier les calculs avant d'y mettre le vrai stock.
-5. Les règles Novax sont paramétrées selon les informations communiquées, mais le rapprochement exact doit être fait avec les bordereaux de Novax. Le solde affiché est indicatif.
-6. Les retours et échanges sont enregistrés dans un journal. Les cas complexes (échange avec nouveau produit, remboursement client, correction de vente) nécessiteront une procédure de régularisation plus complète.
-7. Le coût des ventes utilise le coût moyen pondéré enregistré au moment de la vente. Ce n'est pas une sortie FIFO par lot.
-8. Aucun paiement par carte n'est traité. L'option carte sert uniquement à noter un mode de paiement futur.
-9. Cette application n'inclut pas encore authentification, chiffrement des données au repos, synchronisation multi-appareils ni sauvegarde automatique. Ne pas y stocker de données clients sensibles avant ajout d'une vraie protection.
-10. Pour installer la PWA, publier les trois fichiers sur une adresse HTTPS, puis ouvrir l'adresse dans Chrome Android et choisir Installer l'application / Ajouter à l'écran d'accueil.
+MISE À JOUR SANS RECRÉER LE DÉPÔT
+1. Dans l’application actuelle, exporte d’abord une sauvegarde JSON depuis « Sauvegarde ». Même si tu n’as pas encore saisi ton vrai stock, garde cette copie.
+2. Télécharge et extrais ce ZIP sur ton téléphone ou ton ordinateur.
+3. Ouvre ton dépôt GitHub existant « imen-bijoux-app ».
+4. Choisis Add file / Upload files. Sélectionne les six fichiers du ZIP, tous à la racine du dépôt.
+5. GitHub doit proposer de remplacer les fichiers qui existent déjà. Vérifie les noms, puis valide Commit changes. Ne crée pas un nouveau dépôt.
+6. Attends la fin du déploiement GitHub Pages. Ferme complètement les onglets de l’application, rouvre le site dans Chrome et attends quelques secondes que le nouveau service worker s’active. Si Chrome conserve l’ancienne version, ouvre les paramètres du site dans Chrome, efface uniquement le cache du site (ne supprime pas les données de l’application avant d’avoir exporté une sauvegarde), puis recharge.
+7. Sur Android, ouvre l’adresse GitHub Pages dans Google Chrome (pas dans le navigateur intégré d’une autre application). Attends que la page soit entièrement chargée, puis ouvre ⋮. Choisis « Installer l’application » si cette option apparaît. Si elle n’apparaît pas, vérifie que le site s’ouvre en HTTPS, que les six fichiers sont bien à la racine du dépôt et que GitHub Pages a terminé le déploiement. « Ajouter à l’écran d’accueil » crée parfois seulement un raccourci : ce n’est pas toujours une installation PWA.
+
+DONNÉES ET SAUVEGARDES
+- Cette application conserve les données dans le stockage local du navigateur sur cet appareil. Elle ne synchronise pas les données avec un autre téléphone.
+- Le remplacement des fichiers du site ne doit pas effacer les données locales, car la clé de stockage a été conservée. Toutefois, exporte une sauvegarde avant la mise à jour.
+- Les données saisies dans l’application ne sont pas publiées dans le dépôt GitHub. Le code du dépôt public reste visible. N’y dépose jamais de fichier de sauvegarde ou de données clients.
+- GitHub Pages est un hébergement statique destiné notamment aux sites de projet/personnels. Sa politique n’en fait pas une garantie d’hébergement permanent d’un logiciel commercial. Cette version sert de prototype privé. Pour vendre l’application à d’autres bijoutiers, il faudra choisir un hébergement et une architecture adaptés.
+
+LIMITES À CONNAÎTRE AVANT LE VRAI STOCK
+- Cette version est une mise à jour de prototype, pas un logiciel comptable certifié ni une application auditée en sécurité. Tester avec des données fictives.
+- Les couleurs sont actuellement enregistrées dans la fiche produit. Le stock détaillé de plusieurs couleurs sous une même référence principale (variantes indépendantes avec lots et ventes séparés) reste à développer. Pour l’instant, si deux couleurs doivent avoir des stocks et coûts séparés, créer deux fiches distinctes.
+- La composition d’une parure est actuellement descriptive. Le déstockage automatique des composants, la vente d’une pièce extraite d’une parure et le contrôle automatique des pièces manquantes restent à développer. Ne pas utiliser cette zone comme inventaire automatique de composants.
+- Pour un bracelet extensible et sa version fixe, créer deux fiches produits distinctes si les prix ou les coûts diffèrent.
+- Les articles défectueux sont sortis du stock disponible. En cas de remplacement fournisseur, enregistrer le nouvel article reçu comme un nouvel achat/lot pour réintégrer correctement la quantité.
+- Les rapports sont indicatifs. Le coût de vente utilise un coût moyen pondéré, pas une méthode FIFO par lot.
+- Pas de compte utilisateur, de chiffrement des données locales, de synchronisation cloud ni de sauvegarde automatique.
+- Le suivi Novax doit être rapproché des bordereaux réels.
+
+CONSEIL
+Après publication, crée quelques produits et fournisseurs fictifs, teste un achat, une vente, un transfert, un article défectueux et une sauvegarde/restauration. Ne commence l’inventaire réel qu’après vérification de ces opérations.
+
+
+CORRECTION PWA V2.1
+- Manifeste renommé en manifest.json pour une meilleure compatibilité MIME sur l’hébergement statique.
+- Identifiant, URL de démarrage, portée et icônes déclarés explicitement.
+- Icône Apple/mobile ajoutée.
+- Service worker enregistré avec la portée du dépôt GitHub Pages et mise à jour sans cache HTTP.
+- Cache principal tolérant aux erreurs et repli hors ligne sur index.html.
+- Nom du cache incrémenté pour forcer le renouvellement de l’ancienne version.
