@@ -1,0 +1,9 @@
+{
+  "name": "Imen Bijoux",
+  "short_name": "Imen Bijoux",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#faf7f5",
+  "theme_color": "#382b32",
+  "description": "Gestion privée du stock, fournisseurs, ventes et retours Imen Bijoux"
+}

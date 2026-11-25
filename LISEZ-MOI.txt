@@ -1,0 +1,35 @@
+IMEN BIJOUX - VERSION COMPLETE DE DEMARRAGE
+
+Fichiers à publier à la racine d'un hébergement HTTPS :
+- index.html
+- manifest.webmanifest
+- sw.js
+
+Modules :
+- Catalogue et références automatiques par catégorie
+- Photos des produits (compressées côté navigateur)
+- Fournisseurs
+- Achats par lots datés, prix et quantités, coût moyen pondéré
+- Stock par emplacement (maison / Shaïma)
+- Transferts sans comptabilisation en vente
+- Ventes Imen à distance / Shaïma au comptoir
+- Livraison et frais facturés au client séparés du chiffre d'affaires bijoux
+- Suivi colis Novax, règlements saisis manuellement
+- Retours, échanges, colis non livrés, responsabilité et frais
+- Fiches clients avec statuts normal / à surveiller / bloqué (décision manuelle)
+- Promotions
+- Dépenses
+- Rapports indicatifs et marge brute
+- Export / restauration JSON
+
+IMPORTANT - À LIRE AVANT UTILISATION
+1. Les données sont conservées dans le navigateur de l'appareil (localStorage). Elles ne sont pas synchronisées ni sauvegardées automatiquement dans le cloud.
+2. Exporter régulièrement une sauvegarde JSON et la conserver ailleurs (Drive, ordinateur, etc.).
+3. GitHub Pages sert le code statique. Le dépôt public rend le code visible. N'y placez aucune donnée commerciale ou personnelle. Les données saisies dans l'app ne sont pas envoyées au dépôt.
+4. La version actuelle est une base fonctionnelle de gestion, non auditée et non certifiée comptablement. Tester avec des données fictives et vérifier les calculs avant d'y mettre le vrai stock.
+5. Les règles Novax sont paramétrées selon les informations communiquées, mais le rapprochement exact doit être fait avec les bordereaux de Novax. Le solde affiché est indicatif.
+6. Les retours et échanges sont enregistrés dans un journal. Les cas complexes (échange avec nouveau produit, remboursement client, correction de vente) nécessiteront une procédure de régularisation plus complète.
+7. Le coût des ventes utilise le coût moyen pondéré enregistré au moment de la vente. Ce n'est pas une sortie FIFO par lot.
+8. Aucun paiement par carte n'est traité. L'option carte sert uniquement à noter un mode de paiement futur.
+9. Cette application n'inclut pas encore authentification, chiffrement des données au repos, synchronisation multi-appareils ni sauvegarde automatique. Ne pas y stocker de données clients sensibles avant ajout d'une vraie protection.
+10. Pour installer la PWA, publier les trois fichiers sur une adresse HTTPS, puis ouvrir l'adresse dans Chrome Android et choisir Installer l'application / Ajouter à l'écran d'accueil.
