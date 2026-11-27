@@ -1,11 +1,11 @@
-const CACHE_NAME = 'imen-bijoux-pwa-v6';
+const CACHE_NAME = 'imen-bijoux-pwa-v9';
 const BASE = new URL('./', self.registration.scope);
 const CORE_FILES = [
   './',
   './index.html',
   './manifest.json',
-  './icon-192.png',
-  './icon-512.png'
+  './icon-or-192.png',
+  './icon-or-512.png'
 ].map(path => new URL(path, BASE).toString());
 
 self.addEventListener('install', event => {
