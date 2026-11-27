@@ -1,4 +1,4 @@
-const CACHE_NAME = 'imen-bijoux-pwa-v5';
+const CACHE_NAME = 'imen-bijoux-pwa-v6';
 const BASE = new URL('./', self.registration.scope);
 const CORE_FILES = [
   './',
@@ -38,16 +38,17 @@ self.addEventListener('fetch', event => {
   const request = event.request;
   if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
   event.respondWith((async () => {
-    const cached = await caches.match(request);
-    if (cached) return cached;
+    // Réseau d'abord : les mises à jour arrivent tout de suite. Cache seulement hors connexion.
     try {
-      const response = await fetch(request);
+      const response = await fetch(request, { cache: 'no-cache' });
       if (response && response.ok) {
         const copy = response.clone();
         caches.open(CACHE_NAME).then(cache => cache.put(request, copy)).catch(() => {});
       }
       return response;
     } catch (error) {
+      const cached = await caches.match(request);
+      if (cached) return cached;
       if (request.mode === 'navigate') {
         const fallback = await caches.match(new URL('./index.html', BASE).toString());
         if (fallback) return fallback;

@@ -1,54 +1,37 @@
-IMEN BIJOUX — VERSION 2 (mise à jour de l’application existante)
+IMEN BIJOUX — VERSION 3
 
-FICHIERS À PUBLIER À LA RACINE DU DÉPÔT
-- index.html
-- manifest.json (manifeste PWA compatible Chrome/GitHub Pages)
-- sw.js
-- icon-192.png et icon-512.png (à la racine du dépôt)
-- LISEZ-MOI.txt (guide)
+PUBLIER LA MISE À JOUR
+1. Dans l'application ACTUELLE : Sauvegarde > Télécharger la sauvegarde. Garde ce fichier en lieu privé (il n'est pas chiffré).
+2. Extrais le ZIP. Dans le dépôt GitHub imen-bijoux-app : Add file > Upload files > ajoute les fichiers extraits (à la racine) > Commit changes.
+   Tu peux supprimer l'ancien fichier inutile manifest.webmanifest.
+3. Attends quelques minutes, ferme l'application, rouvre-la dans Chrome (recharge une 2e fois si l'ancienne s'affiche).
+   Utilise la même adresse et le même navigateur qu'avant. N'efface pas les données du site.
+4. Crée ton mot de passe (8 caractères minimum). Les anciennes données sont reprises puis chiffrées.
+5. Vérifie les données, puis fais une sauvegarde chiffrée. Quand tout est confirmé, supprime l'ancienne sauvegarde non chiffrée.
 
-NOUVEAUTÉS DE CETTE VERSION
-- Interface noir, beige et or, avec navigation verticale à gauche.
-- Catégories supplémentaires : montres, accessoires cheveux, couronnes/diadèmes, serre-têtes, bracelets de cheville et bracelets en fil.
-- Fiche produit enrichie : public Femme/Homme/Mixte, marque ou modèle de référence (dont Xiaomi et Messika), collection/gamme, matière/qualité (inox, XP, XD, plaqué or), finition, couleur, taille, type de bague, système de bracelet, fonctionnement de montre et composition descriptive des parures.
-- Gestion des bracelets extensibles avec extension amovible ou non extensibles. Créer une fiche distincte pour chaque version ayant un prix ou un coût différent.
-- Nouvelle rubrique « Défaillances, remboursements et pertes » : déclaration des articles défectueux, quantité, fournisseur, coût d’achat, emplacement, statut du retour, remboursement, remplacement accepté ou perte définitive. Les articles déclarés défectueux sont retirés du stock disponible.
-- Possibilité de mettre à jour le statut d’un dossier fournisseur après la déclaration initiale.
-- Sauvegarde et restauration compatibles avec les sauvegardes de la version précédente.
+MOT DE PASSE
+- Oublié = données et sauvegardes chiffrées perdues. Aucune récupération possible.
+- Une sauvegarde garde le mot de passe qu'elle avait le jour de sa création.
+- Verrouillage après 10 minutes sans activité (une saisie non enregistrée est perdue).
 
-MISE À JOUR SANS RECRÉER LE DÉPÔT
-1. Dans l’application actuelle, exporte d’abord une sauvegarde JSON depuis « Sauvegarde ». Même si tu n’as pas encore saisi ton vrai stock, garde cette copie.
-2. Télécharge et extrais ce ZIP sur ton téléphone ou ton ordinateur.
-3. Ouvre ton dépôt GitHub existant « imen-bijoux-app ».
-4. Choisis Add file / Upload files. Sélectionne les six fichiers du ZIP, tous à la racine du dépôt.
-5. GitHub doit proposer de remplacer les fichiers qui existent déjà. Vérifie les noms, puis valide Commit changes. Ne crée pas un nouveau dépôt.
-6. Attends la fin du déploiement GitHub Pages. Ferme complètement les onglets de l’application, rouvre le site dans Chrome et attends quelques secondes que le nouveau service worker s’active. Si Chrome conserve l’ancienne version, ouvre les paramètres du site dans Chrome, efface uniquement le cache du site (ne supprime pas les données de l’application avant d’avoir exporté une sauvegarde), puis recharge.
-7. Sur Android, ouvre l’adresse GitHub Pages dans Google Chrome (pas dans le navigateur intégré d’une autre application). Attends que la page soit entièrement chargée, puis ouvre ⋮. Choisis « Installer l’application » si cette option apparaît. Si elle n’apparaît pas, vérifie que le site s’ouvre en HTTPS, que les six fichiers sont bien à la racine du dépôt et que GitHub Pages a terminé le déploiement. « Ajouter à l’écran d’accueil » crée parfois seulement un raccourci : ce n’est pas toujours une installation PWA.
+SAUVEGARDE SUR ANDROID OU ONEDRIVE
+- Le fichier arrive dans « Téléchargements » du téléphone.
+- OneDrive : ouvre l'application OneDrive > + > Importer > choisis le fichier.
+- La sauvegarde n'est pas automatique. Restaurer remplace les données : ce n'est pas une synchronisation.
 
-DONNÉES ET SAUVEGARDES
-- Cette application conserve les données dans le stockage local du navigateur sur cet appareil. Elle ne synchronise pas les données avec un autre téléphone.
-- Le remplacement des fichiers du site ne doit pas effacer les données locales, car la clé de stockage a été conservée. Toutefois, exporte une sauvegarde avant la mise à jour.
-- Les données saisies dans l’application ne sont pas publiées dans le dépôt GitHub. Le code du dépôt public reste visible. N’y dépose jamais de fichier de sauvegarde ou de données clients.
-- GitHub Pages est un hébergement statique destiné notamment aux sites de projet/personnels. Sa politique n’en fait pas une garantie d’hébergement permanent d’un logiciel commercial. Cette version sert de prototype privé. Pour vendre l’application à d’autres bijoutiers, il faudra choisir un hébergement et une architecture adaptés.
+RÈGLES DE CALCUL
+- Chiffre d'affaires = ventes livrées ou payées au comptoir, moins les colis non livrés.
+- Aucun remboursement : après livraison, échange uniquement (même article ou un autre).
+- Colis non livré : 3 TND par dossier (pas par pièce). Échange : 9 TND si ton erreur, 0 sinon (modifiable).
+- Pièce retournée non revendable : son coût est compté en perte.
+- Échange avec un article d'un autre prix : la différence de prix n'est pas calculée.
+- Solde Novax : à comparer avec les bordereaux.
+- Une vente ou un achat faux s'annule puis se ressaisit.
+- Les anciens retours en double ou colis « retournés » sans dossier ne sont pas corrigés automatiquement : vérifie-les.
 
-LIMITES À CONNAÎTRE AVANT LE VRAI STOCK
-- Cette version est une mise à jour de prototype, pas un logiciel comptable certifié ni une application auditée en sécurité. Tester avec des données fictives.
-- Les couleurs sont actuellement enregistrées dans la fiche produit. Le stock détaillé de plusieurs couleurs sous une même référence principale (variantes indépendantes avec lots et ventes séparés) reste à développer. Pour l’instant, si deux couleurs doivent avoir des stocks et coûts séparés, créer deux fiches distinctes.
-- La composition d’une parure est actuellement descriptive. Le déstockage automatique des composants, la vente d’une pièce extraite d’une parure et le contrôle automatique des pièces manquantes restent à développer. Ne pas utiliser cette zone comme inventaire automatique de composants.
-- Pour un bracelet extensible et sa version fixe, créer deux fiches produits distinctes si les prix ou les coûts diffèrent.
-- Les articles défectueux sont sortis du stock disponible. En cas de remplacement fournisseur, enregistrer le nouvel article reçu comme un nouvel achat/lot pour réintégrer correctement la quantité.
-- Les rapports sont indicatifs. Le coût de vente utilise un coût moyen pondéré, pas une méthode FIFO par lot.
-- Pas de compte utilisateur, de chiffrement des données locales, de synchronisation cloud ni de sauvegarde automatique.
-- Le suivi Novax doit être rapproché des bordereaux réels.
-
-CONSEIL
-Après publication, crée quelques produits et fournisseurs fictifs, teste un achat, une vente, un transfert, un article défectueux et une sauvegarde/restauration. Ne commence l’inventaire réel qu’après vérification de ces opérations.
-
-
-CORRECTION PWA V2.1
-- Manifeste renommé en manifest.json pour une meilleure compatibilité MIME sur l’hébergement statique.
-- Identifiant, URL de démarrage, portée et icônes déclarés explicitement.
-- Icône Apple/mobile ajoutée.
-- Service worker enregistré avec la portée du dépôt GitHub Pages et mise à jour sans cache HTTP.
-- Cache principal tolérant aux erreurs et repli hors ligne sur index.html.
-- Nom du cache incrémenté pour forcer le renouvellement de l’ancienne version.
+LIMITES
+- Pas de synchronisation en ligne entre appareils, pas de comptes séparés.
+- Le mot de passe protège les données de l'appareil. La page et le code restent publics, sans tes données.
+- Photos : limitées par l'espace libre de l'appareil. Une très grosse sauvegarde peut échouer sur un petit téléphone.
+- Le navigateur ou un effacement des données du site peut tout supprimer : sauvegarde chaque semaine.
+- Prototype, non audité en sécurité, pas un logiciel comptable certifié.
